@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>Nfx.SDK.Core</RootNamespace>
+    <AssemblyName>Nfx.SDK.Core.net</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>Nfx.SDK.Core</PackageId>
+    <Authors>Nfx</Authors>
+    <Owners>Nfx</Owners>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <Tags>nfx fivem redm rdr3 gtav</Tags>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/nfx-framework/SDK.Core</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RepositoryType>git</RepositoryType>
+    <Description>Nfx Core SDK for plugins</Description>
+    <Title>Nfx.SDK.Core</Title>
+    <PackageProjectUrl>https://github.com/nfx-framework</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>nfx fivem redm rdr3 gtav</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="images\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" ExcludeAssets="Compile" GeneratePathProperty="true" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <Reference Include="Newtonsoft.Json">
+	    <HintPath>$(PkgNewtonsoft_Json)\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
