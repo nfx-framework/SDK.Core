@@ -1,4 +1,4 @@
-name: Nfx.SDK.Core Continous Integration
+name: Nfx.SDK.Core Continuous Integration
 
 on:
   push:
