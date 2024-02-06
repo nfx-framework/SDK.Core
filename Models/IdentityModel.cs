@@ -1,7 +1,7 @@
-using System;
-using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
 using Nfx.SDK.Core.Helpers;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nfx.SDK.Core.Models
 {
@@ -40,7 +40,7 @@ namespace Nfx.SDK.Core.Models
 		/// <value>
 		/// The timestamp of when the model was deleted.
 		/// </value>
-		public DateTime? Deleted { get; set; }
+		public DateTime? DeletedAt { get; set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IdentityModel" /> class.

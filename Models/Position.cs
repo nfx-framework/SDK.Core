@@ -1,6 +1,6 @@
+using JetBrains.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JetBrains.Annotations;
 
 namespace Nfx.SDK.Core.Models
 {
@@ -41,7 +41,8 @@ namespace Nfx.SDK.Core.Models
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Position" /> class.
 		/// </summary>
-		public Position() { }
+		public Position()
+		{ }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Position" /> class.

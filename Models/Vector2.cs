@@ -1,6 +1,6 @@
+using JetBrains.Annotations;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JetBrains.Annotations;
 
 namespace Nfx.SDK.Core.Models
 {
@@ -32,7 +32,8 @@ namespace Nfx.SDK.Core.Models
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Vector2" /> class.
 		/// </summary>
-		public Vector2() { }
+		public Vector2()
+		{ }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Vector2" /> class.

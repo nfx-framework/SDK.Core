@@ -1,5 +1,5 @@
-using System.Globalization;
 using JetBrains.Annotations;
+using System.Globalization;
 
 namespace Nfx.SDK.Core.Locales
 {

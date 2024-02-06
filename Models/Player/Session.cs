@@ -1,8 +1,8 @@
+using JetBrains.Annotations;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using JetBrains.Annotations;
-using Newtonsoft.Json;
 
 namespace Nfx.SDK.Core.Models.Player
 {
