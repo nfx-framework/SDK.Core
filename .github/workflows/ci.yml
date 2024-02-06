@@ -8,17 +8,23 @@ on:
 
 jobs:
   build:
-    name: Build project
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+    env:
+      GITHUB_ENV: 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 4.7.1
-    - name: Build 
-      run: dotnet build -c Release Nfx.SDK.Core.sln -o Build
-    - uses: actions/upload-artifact@v3.1.0
-      with:
-        name: Nfx.SDK.Core-${{ env.SEMVER }}
-        path: Build
+      - uses: actions/checkout@v4
+      - run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+      - uses: microsoft/setup-msbuild@v1.1
+      - uses: NuGet/setup-nuget@v2
+
+      - name: Restore dependencies
+        run: nuget restore Nfx.SDK.Core.sln
+
+      - name: Build the solution
+        run: msbuild Nfx.SDK.Core.sln /p:Configuration=Release /p:Outdir=Build
+
+      - name: Attach Zip as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nfx.SDK.Core-${{ env.GITHUB_ENV }}
+          path: Build
