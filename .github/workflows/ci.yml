@@ -1,4 +1,4 @@
-name: Nfx.SDK.Core Continuous Integration
+name: Continuous Integration
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       semVer: ${{ steps.gitversion.outputs.semVer }}
-      assemblySemVer: ${{ steps.gitversion.outputs.semVer.assemblySemVer }}
+      assemblySemVer: ${{ steps.gitversion.outputs.assemblySemVer }}
 
     steps:
       - uses: actions/checkout@v2.4.2
@@ -40,7 +40,7 @@ jobs:
     needs: calculate-version
     env:
       SEMVER: ${{ needs.calculate-version.outputs.semVer }}
-      ASSEMBLYVER: ${{ needs.calculate-version.outputs.assemblySemVer }}
+      ASSEMBLYSEMVER: ${{ needs.calculate-version.outputs.assemblySemVer }}
 
     steps:
       - uses: actions/checkout@v2.4.2
@@ -55,7 +55,7 @@ jobs:
         run: nuget restore Nfx.SDK.Core.sln
 
       - name: Build the solution
-        run: dotnet build -c Release -o Build /p:Version=${{env.ASSEMBLYVER}}  Nfx.SDK.Core.sln
+        run: dotnet build -c Release -o Build /p:Version=${{env.ASSEMBLYSEMVER}} Nfx.SDK.Core.sln
 
       - name: Attach Zip as build artifact
         uses: actions/upload-artifact@v3.1.0
