@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-      GITHUB_ENV: 
+      GITHUB_ENV: ''
     steps:
       - uses: actions/checkout@v4
       - run: echo "SHORT=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
