@@ -13,7 +13,7 @@ jobs:
       GITHUB_ENV: 
     steps:
       - uses: actions/checkout@v4
-      - run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+      - run: echo "SHORT=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
       - uses: microsoft/setup-msbuild@v1.1
       - uses: NuGet/setup-nuget@v2
 
